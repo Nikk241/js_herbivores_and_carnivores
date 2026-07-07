@@ -34,15 +34,9 @@ class Herbivore extends Animal {
 class Carnivore extends Animal {
   // write your code here
   bite(target) {
-    if (target instanceof Carnivore) {
-      return;
+    if (target instanceof Herbivore && !target.hidden) {
+      target.takeDamage(50);
     }
-
-    if (target.hidden) {
-      return;
-    }
-
-    target.takeDamage(50);
   }
 }
 
